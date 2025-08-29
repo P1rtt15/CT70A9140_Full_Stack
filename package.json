@@ -1,0 +1,37 @@
+{
+  "name": "ct70a9140_full-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/main.js",
+    "server": "nodemon backend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P1rtt15/CT70A9140_Full_Stack.git"
+  },
+  "author": "Konsta Pirttilahti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/P1rtt15/CT70A9140_Full_Stack/issues"
+  },
+  "homepage": "https://github.com/P1rtt15/CT70A9140_Full_Stack#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
