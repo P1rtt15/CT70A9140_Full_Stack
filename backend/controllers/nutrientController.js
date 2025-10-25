@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const nutrientModel = ('../schemas/nutrientModel')
+const nutrientModel = require('../models/nutrientModel')
 
 // @desc   Get nutrients
 // @route  GET /api/nutrients

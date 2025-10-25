@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
-const userModel = ('../schemas/userModel')
+const User = require('../models/userModel')
 
 const generateToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET, {
@@ -13,9 +13,9 @@ const generateToken = (id) => {
 // @route  POST /api/users
 // @access Private
 // @Data   _id, String = Given by MongoDB when creating new entry
-//         _name, String = Name of the new user
-//         _email, String = Email address of the new user
-//         _password, String = Password user uses to sign in
+//         name, String = Name of the new user
+//         email, String = Email address of the new user
+//         password, String = Password user uses to sign in
 
 const registerUser = asyncHandler( async (req, res) => {
     const {name, email, password} = req.body
@@ -24,8 +24,8 @@ const registerUser = asyncHandler( async (req, res) => {
         throw new Error('Please add all fields')       
     }
 
-    const emailInUse = await userModel.findOne({email})
-    const userNameInUse = await userModel.findOne({name})
+    const emailInUse = await User.findOne({email})
+    const userNameInUse = await User.findOne({name})
 
     if(emailInUse){
         res.status(400)
@@ -40,7 +40,7 @@ const registerUser = asyncHandler( async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
-    const user = await userModel.create({
+    const user = await User.create({
         name,
         email,
         password: hashedPassword
@@ -66,7 +66,7 @@ const registerUser = asyncHandler( async (req, res) => {
 const loginUser = asyncHandler( async (req, res) => {
     const {account, password} = req.body
 
-    const user = await userModel.findOne({account})
+    const user = await User.findOne({account})
 
     if(user && (await bcrypt.compare(password, user.password))){
         res.json({
@@ -87,7 +87,7 @@ const loginUser = asyncHandler( async (req, res) => {
 // @route  GET /api/users/me
 // @access Private
 const getMe = asyncHandler( async (req, res) => {
-    const{_id, name, email} = await userModel.findById(req.user.id)
+    const{_id, name, email} = await User.findById(req.user.id)
     res.status(200).json({
         id: _id,
         name: name,
