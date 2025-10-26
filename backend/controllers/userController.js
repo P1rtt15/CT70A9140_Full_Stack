@@ -39,6 +39,7 @@ const registerUser = asyncHandler( async (req, res) => {
     
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
+    //const test = await bcrypt.compare(password, hashedPassword)
 
     const user = await User.create({
         name,
@@ -51,7 +52,7 @@ const registerUser = asyncHandler( async (req, res) => {
             id: user._id,
             name: user.name,
             email: user.email,
-            token: generateToken.apply(user._id)
+            token: generateToken(user._id)
         })
     } else {
         res.status(400)
@@ -64,23 +65,21 @@ const registerUser = asyncHandler( async (req, res) => {
 // @access Public
 
 const loginUser = asyncHandler( async (req, res) => {
-    const {account, password} = req.body
+    const {email, password} = req.body
 
-    const user = await User.findOne({account})
+    const user = await User.findOne({ email })
 
     if(user && (await bcrypt.compare(password, user.password))){
-        res.json({
+        res.status(200).json({
             id: user._id,
             name: user.name,
             email: user.email,
-            token: generateToken.apply(user._id)
+            token: generateToken(user._id)
         })
     } else {
         res.status(400)
         throw new Error('Invalid credentials') 
     }
-
-    res.status(200).json({message: 'Set nutrients'})
 })
 
 // @desc   Get user data
@@ -95,23 +94,8 @@ const getMe = asyncHandler( async (req, res) => {
     })
 })
 
-// @desc   Update user informations
-// @route  PUT /api/users/:id
-// @access Private
-const updateNutrient = asyncHandler( async (req, res) => {
-    res.status(200).json({message: `Update nutrient ${req.prams.id}`})
-})
-
-// @desc   Delete nutrient
-// @route  DELETE /api/nutrients/:id
-// @access Private
-const deleteNutrient = asyncHandler( async (req, res) => {
-    res.status(200).json({message: `Delete nutrient ${req.prams.id}`})
-})
-
 module.exports = {
     registerUser,
     loginUser,
-    getMe,
-    deleteNutrient
+    getMe
 } 

@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Calcium",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Phosphorus",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Potassium",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Sodium chloride",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Magnesium",
+    "type": "Minerals",
+    "unit":  "g"
+  },
+  {
+    "name": "Iron",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Zinc",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Iodine",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Chromium",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Copper",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Fluoride",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Molybdenum",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Manganese",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Selenium",
+    "type": "Minerals",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin A",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin D",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin E",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin K",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin C",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Vitamin B",
+    "type": "Vitamins",
+    "unit": "g"
+  },
+  {
+    "name": "Sugar",
+    "type": "Carbohydrates",
+    "unit": "g"
+  },
+  {
+    "name": "Starche",
+    "type": "Carbohydrates",
+    "unit": "g"
+  },
+  {
+    "name": "Fiber",
+    "type": "Carbohydrates",
+    "unit": "g"
+  },
+  {
+    "name": "Saturated",
+    "type": "Fats",
+    "unit": "g"
+  },
+  {
+    "name": "Trans",
+    "type": "Fats",
+    "unit": "g"
+  },
+  {
+    "name": "Watter",
+    "type": "Liquids",
+    "unit": "l"
+  },
+  {
+    "name": "Protein",
+    "type": "Proteins",
+    "unit": "g"
+  }
+]
+
+
