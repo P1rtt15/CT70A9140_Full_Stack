@@ -5,6 +5,7 @@ const nutrientTypeEnum = require('../../enums/nutrientTypeEnum')
 const nutrientModel = mongoose.Schema({
   userID: {
     type: mongoose.Schema.Types.ObjectId,
+    default: null,
     ref: 'User'},
   name: {
     type: String,

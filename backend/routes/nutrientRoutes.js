@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const {getNutrients, setNutrient, updateNutrient, deleteNutrient} = require('../controllers/nutrientController')
+const {getNutrients, addNutrient, deleteNutrient} = require('../controllers/nutrientController')
+const {protect} = require('../middleware/authMiddleware')
 
-router.route('/').get(getNutrients).post(setNutrient)
-router.route('/:id').put(updateNutrient).delete(deleteNutrient)
+router.route('/').get(protect, getNutrients).post(protect, addNutrient)
+router.route('/:id').delete(protect, deleteNutrient)
 
 module.exports = router
